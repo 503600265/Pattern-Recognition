@@ -47,3 +47,26 @@ print("Finish importing temp directory")
 adress_trgt = r"C:\Users\Administrator\Desktop\PRML\Project\fabric_data\temp"
 read_picture_data_set(adress_trgt)
 print("Finish importing trgt directory")
+
+
+
+import json
+import glob, os
+
+def load_fabric_data(path):
+    '''
+    Loads data from fabric_data folder.
+    Returns:
+        (list, list)
+        A list of id in the file name
+        A list of dictionary file containing data from json (flaw_type, bbox)
+
+    Sample usage: fid, fdata = load_fabric_data('fabric_data/label_json/**/**.json')
+    '''
+    fid = []
+    fdata = []
+    for filename in glob.iglob(path, recursive=True):
+        fid.append(filename.split('/')[-1].split('.')[0])
+        with open(filename) as f:
+            fdata.append(json.load(f))
+    return (fid, fdata)
