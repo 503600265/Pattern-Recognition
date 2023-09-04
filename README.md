@@ -1,10 +1,8 @@
-# PRML
-印花布匹疵点&布匹成分分析
-Fabric Data Analysis
+# Fabric Data Analysis
 This is a class project for Fudan COMP130030.01 Pattern Recogniztion class. 
 
 ## Project Descripition
-A flaw in fabric can be catogrize into 
+A flaw in fabric can be categrized into 
 {
 0: 'unknown',
 1: 'escape_printing',
@@ -22,7 +20,7 @@ A flaw in fabric can be catogrize into
 13: 'false_positive',
 14: 'no_alignment'
 }.
-Given training and testing of corresponding flaw type, find the best model with highest accuarcy.
+Given training and testing set of corresponding flaw types, find the best model with highest accuracy.
 
 ## Result
 During the process of find the best algorithm, we tried out many variations of neural networks. AlexNet turned out to have the most accuracy.
